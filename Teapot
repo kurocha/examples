@@ -2,7 +2,15 @@
 source "https://github.com/dream-framework/"
 
 package "variants"
-package "platform-darwin-osx"
+
+host /darwin/ do
+	package "platform-darwin-osx"
+end
+
+host /linux/ do
+	package "platform-linux"
+	package "opengl3-headers"
+end
 
 package "jpeg"
 package "png"
