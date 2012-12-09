@@ -1,0 +1,18 @@
+
+source "https://github.com/dream-framework/"
+
+package "variants"
+package "platform-darwin-osx"
+
+package "jpeg"
+package "png"
+package "freetype"
+package "vorbis"
+package "ogg"
+
+package "unit-test"
+package "euclid"
+package "dream"
+package "tagged-format"
+
+package "dream-examples", :local => "./"
