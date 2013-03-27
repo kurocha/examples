@@ -21,7 +21,6 @@
 #include <Dream/Events/Logger.h>
 
 #include <Dream/Client/Graphics/MeshBuffer.h>
-#include <Dream/Client/Graphics/PixelBufferRenderer.h>
 
 #include <Dream/Client/Graphics/Renderer.h>
 #include <Dream/Client/Graphics/ParticleRenderer.h>
@@ -262,7 +261,7 @@ namespace SakuraHeart {
 	class SakuraHeartApplicationDelegate : public Object, implements IApplicationDelegate
 	{
 	protected:
-		Ref<Context> _context;
+		Ref<IContext> _context;
 	
 		virtual ~SakuraHeartApplicationDelegate ();
 		virtual void application_did_finish_launching (IApplication * application);

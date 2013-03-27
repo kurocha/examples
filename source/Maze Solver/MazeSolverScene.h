@@ -22,7 +22,6 @@
 #include <Dream/Events/Logger.h>
 
 #include <Dream/Client/Graphics/MeshBuffer.h>
-#include <Dream/Client/Graphics/PixelBufferRenderer.h>
 
 #include <Dream/Client/Graphics/Renderer.h>
 #include <Dream/Client/Graphics/ParticleRenderer.h>
@@ -46,7 +45,10 @@ namespace MazeSolver {
 		//Mesh *_lightMesh, *_test;
 
 		Ref<RendererState> _renderer_state;
+		
 		Ref<ICamera> _camera;
+		Ref<Viewport> _viewport;
+		
 		Ref<Program> _flat_program, _wireframe_program;
 
 		Ref<WireframeRenderer> _wireframe_renderer;

@@ -18,11 +18,13 @@ namespace MazeSolver {
 		_camera = new BirdsEyeCamera;
 		Ref<IProjection> projection = new PerspectiveProjection(R90, 1.0, 1024.0);
 		
+		_viewport = new Viewport(_camera, projection);
+		
 		_renderer_state = new RendererState;
 		_renderer_state->shader_manager = new ShaderManager;
 		_renderer_state->texture_manager = new TextureManager;
 		_renderer_state->resource_loader = manager->resource_loader();
-		_renderer_state->viewport = new Viewport(_camera, projection);
+		_renderer_state->viewport = _viewport;
 
 		{
 			_flat_program = _renderer_state->load_program("Shaders/flat");
@@ -134,7 +136,7 @@ namespace MazeSolver {
 	bool MazeSolverScene::resize (const ResizeInput & input)
 	{
 
-		_renderer_state->viewport->set_bounds(AlignedBox<2>(ZERO, input.new_size()));
+		_viewport->set_bounds(AlignedBox<2>(ZERO, input.new_size()));
 		glViewport(0, 0, input.new_size()[WIDTH], input.new_size()[HEIGHT]);
 
 		check_graphics_error();
@@ -154,6 +156,7 @@ namespace MazeSolver {
 		
 		_maze->clear();
 		
+		/*
 		const char* TestMazeData1 = ""
 		" _ _ _ _ _ _ _ _ _ _\n"
 		"|  _ _ _ _ _ _ _ _  |\n"
@@ -166,7 +169,8 @@ namespace MazeSolver {
 		"|_   _  |_     _|_  |\n"
 		"| |_  |_  | |_ _| | |\n"
 		"|_ _ _ _ _ _ _ _ _|_|\n";
-
+		*/
+		
 		//_maze->read_maze(TestMazeData1);
 
 		// Generate a random maze:
@@ -282,11 +286,11 @@ namespace MazeSolver {
 		Path visual_path;
 		Vec3 path_color(1.0, 0.2, 0.2);
 
-		for (auto step : steps) {
-			Vec3 point = (((step * 10) << 0) + 5);
+		//for (auto step : steps) {
+		//	Vec3 point = (((step * 10) << 0) + 5);
 
 			// Render points...
-		}
+		//}
 	}
 
 }
