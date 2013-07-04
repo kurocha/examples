@@ -17,8 +17,8 @@ define_target "examples" do |target|
 end
 
 define_configuration "examples" do |configuration|
-	#configuration[:source] = "https://github.com/dream-framework"
-	configuration[:source] = "../"
+	configuration[:source] = "https://github.com/dream-framework"
+	#configuration[:source] = "../"
 	
 	configuration.import! "project"
 	configuration.require "tagged-format"
