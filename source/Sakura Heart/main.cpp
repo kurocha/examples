@@ -285,7 +285,7 @@ namespace SakuraHeart {
 		Ref<Thread> thread = new Events::Thread;
 		Ref<ILoader> loader = SceneManager::default_resource_loader();
 		
-		logger()->log(LOG_DEBUG, LogBuffer() << "Root directory: " << loader->resource_path());
+		log_debug("Root directory:", loader->resource_path());
 		
 		Ref<SceneManager> scene_manager = new SceneManager(_context, thread->loop(), loader);
 		
@@ -294,14 +294,14 @@ namespace SakuraHeart {
 	
 	void SakuraHeartApplicationDelegate::application_will_enter_background (IApplication * application)
 	{
-		logger()->log(LOG_INFO, "Entering background...");
+		log_debug("Entering background...");
 
 		_context->stop();
 	}
 	
 	void SakuraHeartApplicationDelegate::application_did_enter_foreground (IApplication * application)
 	{
-		logger()->log(LOG_INFO, "Entering foreground...");
+		log_debug("Entering foreground...");
 		
 		_context->start();
 	}
@@ -315,5 +315,5 @@ int main (int argc, const char * argv[])
 	Ref<SakuraHeartApplicationDelegate> delegate = new SakuraHeartApplicationDelegate;
 	IApplication::start(delegate);
 	
-    return 0;
+	return 0;
 }
