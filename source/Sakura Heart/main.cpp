@@ -56,7 +56,7 @@ namespace SakuraHeart {
 	}
 	
 	void HeartParticles::add() {
-		const std::size_t DENSITY = 200;
+		const std::size_t DENSITY = 100;
 		
 		for (std::size_t i = 0; i < DENSITY; i += 1) {
 			RealT t = real_random(0, R360);
