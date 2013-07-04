@@ -92,6 +92,8 @@ namespace SakuraHeart {
 	class SakuraHeartRenderer : public Object {
 	protected:
 		Ref<Program> _particle_program;
+		GLuint _display_matrix_uniform;
+		
 		Ref<Texture> _sakura_texture;
 		
 		Ref<RendererState> _renderer_state;
@@ -114,6 +116,8 @@ namespace SakuraHeart {
 				auto binding = _particle_program->binding();
 				binding.set_texture_unit("diffuse_texture", 0);
 			}
+			
+			_display_matrix_uniform = _particle_program->uniform_location("display_matrix");
 		}
 		
 		virtual ~SakuraHeartRenderer() {
@@ -127,7 +131,7 @@ namespace SakuraHeart {
 			
 			{
 				auto binding = _particle_program->binding();
-				binding.set_uniform("display_matrix", _renderer_state->viewport->display_matrix());
+				binding.set_uniform(_display_matrix_uniform, _renderer_state->viewport->display_matrix());
 				
 				_renderer_state->texture_manager->bind(0, _sakura_texture);
 				heart_particles->draw();
