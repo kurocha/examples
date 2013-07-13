@@ -8,6 +8,7 @@
 
 #include <Dream/Client/Client.h>
 #include <Dream/Client/Display/Application.h>
+#include <Dream/Client/Display/DefaultCamera.h>
 
 #include <Dream/Client/Graphics/ShaderManager.h>
 #include <Dream/Client/Graphics/TextureManager.h>
@@ -138,7 +139,7 @@ namespace SakuraHeart {
 			}
 			
 			glDisable(GL_BLEND);
-			glDepthMask(GL_TRUE);		
+			glDepthMask(GL_TRUE);
 		}
 	};
 	
@@ -243,7 +244,8 @@ namespace SakuraHeart {
 	}
 	
 	bool SakuraHeartScene::motion (const MotionInput & input) {
-		_camera->process(input);
+		if (!default_camera_motion_handler(*_camera, input))
+			return Scene::motion(input);
 		
 		return true;
 	}
