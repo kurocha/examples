@@ -1,4 +1,31 @@
+@shader
+
 #version 150
+
+@vertex
+
+uniform mat4 display_matrix;
+uniform mat4 model_matrix;
+
+in vec3 position;
+in vec3 normal;
+in vec2 mapping;
+
+out vec3 lighting_normal;
+out vec4 surface_position;
+out vec2 diffuse_mapping;
+
+void main () {
+	//lighting_normal = (model_matrix * vec4(normal, 0.0)).xyz;
+	
+	//diffuse_mapping = mapping;
+
+	surface_position = model_matrix * vec4(position, 1.0);
+	
+	gl_Position = display_matrix * surface_position;
+}
+
+@fragment
 
 uniform sampler2D diffuse_texture;
 

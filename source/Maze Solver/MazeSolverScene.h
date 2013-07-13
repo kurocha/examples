@@ -46,7 +46,7 @@ namespace MazeSolver {
 
 		Ref<RendererState> _renderer_state;
 		
-		Ref<ICamera> _camera;
+		Ref<BirdsEyeCamera> _camera;
 		Ref<Viewport> _viewport;
 		
 		Ref<Program> _flat_program, _wireframe_program;

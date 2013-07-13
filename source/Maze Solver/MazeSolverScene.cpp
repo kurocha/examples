@@ -9,6 +9,8 @@
 
 #include "MazeSolverScene.h"
 
+#include <Dream/Client/Display/DefaultCamera.h>
+
 namespace MazeSolver {
 	void MazeSolverScene::will_become_current(ISceneManager * manager) {
 		Scene::will_become_current(manager);
@@ -146,7 +148,9 @@ namespace MazeSolver {
 
 	bool MazeSolverScene::motion (const MotionInput & input)
 	{
-		_camera->process(input);
+		if (!default_camera_motion_handler(*_camera, input))
+			return Scene::motion(input);
+		
 		return true;
 	}
 
