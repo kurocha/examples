@@ -9,7 +9,7 @@
 
 #include "MazeSolverScene.h"
 
-#include <Dream/Client/Display/DefaultCamera.h>
+#include <Dream/Display/DefaultCamera.h>
 
 namespace MazeSolver {
 	void MazeSolverScene::will_become_current(ISceneManager * manager) {

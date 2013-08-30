@@ -6,13 +6,12 @@
 //  Copyright 2011 Orion Transfer Ltd. All rights reserved.
 //
 
-#include <Dream/Client/Client.h>
-#include <Dream/Client/Display/Application.h>
-#include <Dream/Client/Display/DefaultCamera.h>
+#include <Dream/Display/Application.h>
+#include <Dream/Display/DefaultCamera.h>
 
-#include <Dream/Client/Graphics/ShaderManager.h>
-#include <Dream/Client/Graphics/TextureManager.h>
-#include <Dream/Client/Graphics/WireframeRenderer.h>
+#include <Dream/Graphics/ShaderManager.h>
+#include <Dream/Graphics/TextureManager.h>
+#include <Dream/Graphics/WireframeRenderer.h>
 
 #include <Dream/Renderer/Viewport.h>
 #include <Dream/Renderer/BirdsEyeCamera.h>
@@ -21,10 +20,10 @@
 
 #include <Dream/Events/Logger.h>
 
-#include <Dream/Client/Graphics/MeshBuffer.h>
+#include <Dream/Graphics/MeshBuffer.h>
 
-#include <Dream/Client/Graphics/Renderer.h>
-#include <Dream/Client/Graphics/ParticleRenderer.h>
+#include <Dream/Graphics/Renderer.h>
+#include <Dream/Graphics/ParticleRenderer.h>
 
 #include <Euclid/Numerics/Vector.IO.h>
 
@@ -33,8 +32,8 @@ namespace SakuraHeart {
 	using namespace Dream::Events;
 	using namespace Dream::Resources;
 	using namespace Dream::Renderer;
-	using namespace Dream::Client::Display;
-	using namespace Dream::Client::Graphics;
+	using namespace Dream::Display;
+	using namespace Dream::Graphics;
 	
 	// The actual particle simulation/drawing code:
 	class HeartParticles : public ParticleRenderer<HeartParticles> {
@@ -312,7 +311,7 @@ namespace SakuraHeart {
 int main (int argc, const char * argv[])
 {
 	using namespace SakuraHeart;
-	using namespace Dream::Client::Display;
+	using namespace Dream::Display;
 	
 	Ref<SakuraHeartApplicationDelegate> delegate = new SakuraHeartApplicationDelegate;
 	IApplication::start(delegate);

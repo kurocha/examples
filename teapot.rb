@@ -11,7 +11,7 @@ define_target "examples" do |target|
 	end
 	
 	target.depends "Language/C++11"
-	target.depends "Library/Dream"
+	target.depends "Library/Dream/Client"
 	
 	target.provides "Application/Examples"
 end

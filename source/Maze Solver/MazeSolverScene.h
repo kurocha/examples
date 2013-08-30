@@ -10,9 +10,9 @@
 #ifndef __MAZE_SOLVER_SCENE_H
 #define __MAZE_SOLVER_SCENE_H
 
-#include <Dream/Client/Graphics/ShaderManager.h>
-#include <Dream/Client/Graphics/TextureManager.h>
-#include <Dream/Client/Graphics/WireframeRenderer.h>
+#include <Dream/Graphics/ShaderManager.h>
+#include <Dream/Graphics/TextureManager.h>
+#include <Dream/Graphics/WireframeRenderer.h>
 
 #include <Dream/Renderer/Viewport.h>
 #include <Dream/Renderer/BirdsEyeCamera.h>
@@ -21,10 +21,10 @@
 
 #include <Dream/Events/Logger.h>
 
-#include <Dream/Client/Graphics/MeshBuffer.h>
+#include <Dream/Graphics/MeshBuffer.h>
 
-#include <Dream/Client/Graphics/Renderer.h>
-#include <Dream/Client/Graphics/ParticleRenderer.h>
+#include <Dream/Graphics/Renderer.h>
+#include <Dream/Graphics/ParticleRenderer.h>
 
 #include <Euclid/Numerics/Quaternion.h>
 #include <Euclid/Geometry/Generate/Planar.h>
@@ -35,7 +35,7 @@
 namespace MazeSolver {
 	using namespace Dream;
 	using namespace Dream::Renderer;
-	using namespace Dream::Client::Graphics;
+	using namespace Dream::Graphics;
 
 	class MazeSolverScene : public Scene {
 	protected:	
