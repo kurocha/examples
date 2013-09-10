@@ -7,6 +7,10 @@
 //
 
 #include <Dream/Display/Application.h>
+
+#include <Dream/Client/ApplicationDelegate.h>
+#include <Dream/Client/Run.h>
+
 #include <Dream/Display/DefaultCamera.h>
 
 #include <Dream/Graphics/ShaderManager.h>
@@ -284,7 +288,7 @@ namespace SakuraHeart {
 		_context = application->create_context(config);
 		
 		Ref<Thread> thread = new Events::Thread;
-		Ref<ILoader> loader = SceneManager::default_resource_loader();
+		Ref<ILoader> loader = Client::default_resource_loader();
 		
 		log_debug("Root directory:", loader->resource_path());
 		
@@ -314,7 +318,7 @@ int main (int argc, const char * argv[])
 	using namespace Dream::Display;
 	
 	Ref<SakuraHeartApplicationDelegate> delegate = new SakuraHeartApplicationDelegate;
-	IApplication::start(delegate);
+	Client::run(delegate);
 	
 	return 0;
 }

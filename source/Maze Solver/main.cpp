@@ -7,6 +7,7 @@
 //
 
 #include <Dream/Display/Application.h>
+#include <Dream/Client/Run.h>
 
 #include "MazeSolverScene.h"
 
@@ -17,7 +18,7 @@ int main (int argc, const char * argv[])
 	using namespace Dream::Display;
 	
 	Ref<Dictionary> config = new Dictionary;
-	IApplication::run_scene(new MazeSolver::MazeSolverScene, config);
+	Client::run(new MazeSolver::MazeSolverScene, config);
 	
 	return 0;
 }
